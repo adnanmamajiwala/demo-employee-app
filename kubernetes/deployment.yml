@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: employee-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employee-ui
+  template:
+    metadata:
+      labels:
+        app: employee-ui
+    spec:
+      containers:
+      - name: address
+        image: adnanmama/employee-ui:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+#          initialDelaySeconds: 5
+#          timeoutSeconds: 1
+#          periodSeconds: 15
