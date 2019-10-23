@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: employee-ui
+  name: employee-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: employee-ui
+      app: employee-app
   template:
     metadata:
       labels:
-        app: employee-ui
+        app: employee-app
     spec:
       containers:
       - name: address
-        image: adnanmama/employee-ui:1.0.0
+        image: adnanmama/employee-app:1.0.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -1,6 +1,16 @@
-server:
-  port: 9999
-
 spring:
   profiles:
     active: prod
+  application:
+    name: employee-app
+
+zuul:
+  routes:
+    employee-service:
+      path: /employee/**
+      serviceId: employee-service
+      strip-prefix: false
+
+employee-service:
+  ribbon:
+    listOfServers: 'http://employee-service:8080'
