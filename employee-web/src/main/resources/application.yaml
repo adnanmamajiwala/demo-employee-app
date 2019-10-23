@@ -2,7 +2,16 @@ spring:
   profiles:
     active: prod
   application:
-    name: employee-app
+    name: frontend-service
+
+management:
+  endpoint:
+    service-registry:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: *
 
 zuul:
   routes:
@@ -10,7 +19,25 @@ zuul:
       path: /employee/**
       serviceId: employee-service
       strip-prefix: false
+    person-service:
+      path: /people/**
+      serviceId: person-service
+      strip-prefix: false
+    address-service:
+      path: /addresses/**
+      serviceId: address-service
+      strip-prefix: false
 
+
+logging:
+  level:
+    com.netflix.loadbalancer: debug
+
+
+---
+spring:
+  profiles: local
 employee-service:
   ribbon:
     listOfServers: 'http://employee-service:8080'
+
