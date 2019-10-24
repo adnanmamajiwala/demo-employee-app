@@ -1,5 +1,5 @@
-import {Configuration} from "./configuration";
+import {Configuration} from './configuration';
 
 export class ConfigurationProd implements Configuration {
-  readonly employees_url = 'employee';
+  readonly employees_url = 'employees';
 }

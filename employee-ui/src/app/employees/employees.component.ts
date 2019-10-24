@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Address, Employee} from "./employees.model";
-import {configuration} from "../app.configuration";
+import {HttpClient} from '@angular/common/http';
+import {Address, Employee} from './employees.model';
+import {configuration} from '../app.configuration';
 
 @Component({
   selector: 'app-employees',
@@ -18,9 +18,9 @@ export class EmployeesComponent implements OnInit {
   ngOnInit() {
     this.httpClient.get<Employee[]>(`${configuration.employees_url}`)
       .subscribe(value => {
-        console.log("Response from service ", value);
+        console.log('Response from service ', value);
         this.employees = value;
-      })
+      });
   }
 
   getAddress(address: Address) {

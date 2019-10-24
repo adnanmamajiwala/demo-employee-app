@@ -11,12 +11,12 @@ management:
   endpoints:
     web:
       exposure:
-        include: *
+        include: '*'
 
 zuul:
   routes:
     employee-service:
-      path: /employee/**
+      path: /employees/**
       serviceId: employee-service
       strip-prefix: false
     person-service:
