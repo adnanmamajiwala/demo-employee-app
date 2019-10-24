@@ -2,7 +2,7 @@ spring:
   profiles:
     active: prod
   application:
-    name: frontend-service
+    name: employee-app-service
 
 management:
   endpoint:

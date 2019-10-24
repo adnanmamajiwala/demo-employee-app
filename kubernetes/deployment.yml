@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend
+  name: employee-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend
+      app: employee-app
   template:
     metadata:
       labels:
-        app: frontend
+        app: employee-app
     spec:
       containers:
-      - name: address
+      - name: employee-app
         image: adnanmama/employee-app:1.0.0
         imagePullPolicy: Always
         ports:
