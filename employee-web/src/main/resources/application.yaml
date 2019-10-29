@@ -3,6 +3,9 @@ spring:
     active: prod
   application:
     name: employee-app-service
+  output:
+    ansi:
+      enabled: always
 
 management:
   endpoint:
