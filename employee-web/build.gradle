@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.2.0.RELEASE'
+    id 'org.springframework.boot' version '2.4.4'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'java'
 }
@@ -24,16 +24,16 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "Hoxton.M3")
+    set('springCloudVersion', "2020.0.2")
 }
 
 dependencies {
     implementation(project(':employee-ui'))
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
-    implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes-all'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.2.0.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
+    implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes-fabric8-all'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

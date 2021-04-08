@@ -6,7 +6,11 @@ spring:
   output:
     ansi:
       enabled: always
-
+  cloud:
+    kubernetes:
+      discovery:
+        include-not-ready-addresses: true
+        all-namespaces: true
 management:
   endpoint:
     service-registry:
